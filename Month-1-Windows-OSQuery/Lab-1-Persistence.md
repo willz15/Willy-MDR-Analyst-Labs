@@ -21,8 +21,8 @@ Describe the steps you took. Use code blocks for commands.
 
 * **Evidence 1:** 
 detection for a possible lateral movement. I noticed in the alert the user-agent was WinRM client. This used to send secure commands on windows machines. Need to investigate and see if ther was an attacker using LOLBins. I noticed the ip address destination was a local windows machine.
-![Onion Alert](images/lateral-movement.png)
-![User-agent](images/winrm-client.png)
+![Onion Alert](lateral-movement.png)
+![User-agent](winrm-client.png)
 
 * **Evidence 2:**
 I went on the hunt section in security onion and searched for sysmon event id 13. I saw wsmprovhost.exe which is used with WinRM client. ALso the event action was showing registry event which matches and also the time of the event correlates with the lateral movement alert. When I opened the event I saw image wsmprovhost.exe, targetobject "backdoor". This shows that an attacker created a persistence using the run key.
