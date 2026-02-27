@@ -34,4 +34,4 @@ I went on the hunt section in security onion and searched for sysmon event id 13
 * **Analysis:** This is a melicious scenario because the attacker created a backdoor registry in run key which is used for persistance. They used LOLBins to attempt to stay hidden from AVs and other security tools. 
 
 ## 6. Conclusion / Remediation
-Once you analyise and confirm its malicious we need to Delete the unauthorized registry key and terminate the malicious process instance. using the seucrty onion we know it came from a remove endpoint. We need to check the securty onion if other devices have communicated with this device and if possible isolate the source device. If its a device that has hijacked when need to further investigate that machine.
+Once you analyse and confirm its malicious we need to Delete the unauthorized registry key and terminate the malicious process instance. using the seucrty onion we know it came from a remove endpoint. We need to check the securty onion if other devices have communicated with this device and if possible isolate the source device. If its a device that has hijacked when need to further investigate that machine.
