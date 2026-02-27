@@ -1,7 +1,7 @@
 # Lab Name: Lab-1-Persistence.md
-**Date:** 2026-XX-XX
-**Category:** [e.g., Endpoint Forensics / Threat Hunting]
-**Tools Used:** [e.g., OSQuery, Sysmon, PowerShell]
+**Date:** 2026-02-27
+**Category:** Persistance / Threat Hunting
+**Tools Used:** Powershell / security onion / sysmon
 
 ## 1. Objective
 The goal was to simulate a common persistence technique (Registry Run Key) and demonstrate how an analyst can identify this unauthorized change by using and IDS and event veiwer. 
@@ -14,7 +14,7 @@ The goal was to simulate a common persistence technique (Registry Run Key) and d
 ## 3. Investigation Steps (The "Process")
 Describe the steps you took. Use code blocks for commands.
 1. **Activity Generation:** Using a remote endpoint, I created a backdoor persistance in the run key.  Invoke-Command -computername soc-win10 -scriptblock {New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Backdoor" -Value "C:\Windows\System32\notepad.exe"}
-2. **Observation:** I checked my security onion as there was a detection for a possible lateral movement. I noticed in the alert the user-agent was WinRM client. This used to send secure commands on windows machines. Need to investigate and see if ther was an attacker using LOLBins. I noticed the ip address destination was a local windows machine.
+2. **Observation:** I checked my security onion as there was a detection for a possible lateral movement. I noticed in the alert the user-agent was WinRM client. This is used to send secure commands on windows machines. I need to investigate and see if ther was an attacker using LOLBins. I noticed the ip address destination was a local windows machine.
 3. **The Hunt:** I used security onion and sysmon
 
 ## 4. Findings & Artifacts
