@@ -27,8 +27,8 @@ detection for a possible lateral movement. I noticed in the alert the user-agent
 I went on the hunt section in security onion and searched for sysmon event id 13. I saw wsmprovhost.exe which is used with WinRM client. ALso the event action was showing registry event which matches and also the time of the event correlates with the lateral movement alert. When I opened the event I saw image wsmprovhost.exe, targetobject "backdoor". This shows that an attacker created a persistence using the run key.
 
 ## 5. Analysis & MITRE Mapping
-* **Technique:** T1112 - Modify Registry
+* **Technique:** T1547.001
 * **Analysis:** This is a melicious scenario because the attacker created a backdoor registry in run key which is used for persistance. They used LOLBins to attempt to stay hidden from AVs and other security tools. 
 
 ## 6. Conclusion / Remediation
-Once you analyise and confirm its malicious we need to quarentine the file the used for the backdoor. Make sure its fully removed from the endpoint and registry. using the seucrty onion we know it came from a remove endpoint. We need to check the securty onion if other devices have communicated with this device and if possible isolate the source device. If its a device that has hijacked when need to further investigate that machine.
+Once you analyise and confirm its malicious we need to Delete the unauthorized registry key and terminate the malicious process instance. using the seucrty onion we know it came from a remove endpoint. We need to check the securty onion if other devices have communicated with this device and if possible isolate the source device. If its a device that has hijacked when need to further investigate that machine.
