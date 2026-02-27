@@ -26,8 +26,8 @@ detection for a possible lateral movement. I noticed in the alert the user-agent
 
 * **Evidence 2:**
 I went on the hunt section in security onion and searched for sysmon event id 13. I saw wsmprovhost.exe which is used with WinRM client. ALso the event action was showing registry event which matches and also the time of the event correlates with the lateral movement alert. When I opened the event I saw image wsmprovhost.exe, targetobject "backdoor". This shows that an attacker created a persistence using the run key.
-![wsmprovhost](wsmprovhost.png)
 ![event13](event13.png)
+![wsmprovhost](wsmprovhost.png)
 
 ## 5. Analysis & MITRE Mapping
 * **Technique:** T1547.001
